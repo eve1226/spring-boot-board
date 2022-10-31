@@ -57,4 +57,14 @@ public class RestaurantsController {
         return new ModelAndView("restaurant-form");
     }
 
+    @RequestMapping(value="/restaurant-delete", method= RequestMethod.POST)
+    @ResponseBody
+    String restaurantDeletePost(Restaurant restaurant){
+        restaurantsRepository.delete(restaurant.getPk());
+        return "<script>" +
+                "alert('삭제되었습니다');"+
+                "document.location.href='/restaurant-list';" +
+                "</script>";
+    }
+
 }

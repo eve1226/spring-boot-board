@@ -14,4 +14,6 @@ public interface RestaurantsRepository {
 
     // @Insert("insert into restaurants(name, address, tel, menu) values(#{name}, #{address}, #{tel}, #{menu})")
     Integer create(Restaurant restaurant);
+
+    Integer delete(Integer pk);
 }

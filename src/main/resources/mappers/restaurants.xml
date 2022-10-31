@@ -13,4 +13,8 @@
     <insert id="create" parameterType="Restaurant">
         insert into restaurants(name, address, tel, menu) values(#{name}, #{address}, #{tel}, #{menu})
     </insert>
+
+    <select id="delete" parameterType="Integer">
+        delete from restaurants where pk = #{pk}
+    </select>
 </mapper>
