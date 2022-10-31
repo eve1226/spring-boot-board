@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,17 +27,19 @@
             </tr>
           </thead>
           <tbody>
+            <c:forEach items="${restaurants}" var="restaurant" varStatus="status">
             <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3dddddddddddd</td>
-              <td>4</td>
-              <td>5</td>
+              <td><a href="/restaurant-detail?pk=${restaurant.pk}">${restaurant.pk}</a></td>
+              <td><a href="/restaurant-detail?pk=${restaurant.pk}">${restaurant.name}</a></td>
+              <td>${restaurant.address}</td>
+              <td>${restaurant.tel}</td>
+              <td>${restaurant.menu}</td>
             </tr>
+            </c:forEach>
           </tbody>
         </table>
       </div>
-      <div class="items3"><button>+맛집 추가</button></div>
+      <div class="items3"><button class="button_base b01_simple_rollover" onclick="window.location.href='/restaurant-create'">+ 맛집 추가</button></div>
     </div>
   </div>
 </body>

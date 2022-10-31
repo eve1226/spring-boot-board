@@ -4,9 +4,11 @@ import com.example.SpringBootBoard.models.Restaurant;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface RestaurantsRepository {
-    //List<Member> read();
+    List<Restaurant> read();
 
     // @Insert("insert into restaurants(name, address, tel, menu) values(#{name}, #{address}, #{tel}, #{menu})")
     Integer create(Restaurant restaurant);

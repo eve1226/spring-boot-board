@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class RestaurantsController {
     @Autowired
@@ -17,7 +19,10 @@ public class RestaurantsController {
     @RequestMapping(value="/restaurant-list", method= RequestMethod.GET)
     @ResponseBody
     ModelAndView restaurantList(){
-        return new ModelAndView("restaurant-list");
+        List<Restaurant> restaurants = restaurantsRepository.read();
+        ModelAndView modelAndView = new ModelAndView("restaurant-list");
+        modelAndView.addObject("restaurants", restaurants);
+        return modelAndView;
     }
 
     @RequestMapping(value="/restaurant-create", method= RequestMethod.GET)
