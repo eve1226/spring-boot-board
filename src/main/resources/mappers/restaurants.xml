@@ -3,7 +3,7 @@
 
 <mapper namespace="com.example.SpringBootBoard.repositories.RestaurantsRepository">
     <select id="read" resultType="Restaurant">
-        select * from restaurants
+        select * from restaurants order by pk desc
     </select>
 
     <select id="detail" parameterType="Integer" resultType="Restaurant">
@@ -17,4 +17,9 @@
     <select id="delete" parameterType="Integer">
         delete from restaurants where pk = #{pk}
     </select>
+
+    <update id="update" parameterType="Restaurant">
+        update restaurants set name=#{name}, address=#{address}, tel=#{tel}, menu=#{menu}
+        where pk=#{pk}
+    </update>
 </mapper>

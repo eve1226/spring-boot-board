@@ -19,10 +19,12 @@
         <div class="items2-create1">
           <table>
             <tbody>
+              <c:if test="${from ne 'create'}">
               <tr>
                 <th>등록번호</th>
-                <td><input type="text" name="pk" value="${restaurant.pk}" <c:if test="${from eq 'detail'}"> readonly </c:if>></td>
+                <td><input type="text" name="pk" value="${restaurant.pk}" readonly></td>
               </tr>
+              </c:if>
               <tr>
                 <th>가게명</th>
                 <td><input type="text" name="name" value="${restaurant.name}" <c:if test="${from eq 'detail'}"> readonly </c:if>></td>
@@ -46,14 +48,14 @@
         <div class="items3">
           <c:choose>
             <c:when test="${from eq 'create'}">
-              <div class="items3"><button class="button_base b01_simple_rollover" onclick="this.form.submit();">등록완료</button></div>
+              <button class="button_base b01_simple_rollover" onclick="this.form.submit();">등록완료</button>
             </c:when>
             <c:when test="${from eq 'detail'}">
-              <button class="button_base b01_simple_rollover" onclick="window.location.href='/restaurant-update'">수정</button>
+              <button class="button_base b01_simple_rollover" onclick="window.location.href='/restaurant-update?pk=${restaurant.pk}'">수정</button>
               <button class="button_base b01_simple_rollover" onclick="this.form.action = 'restaurant-delete'; this.form.submit();">삭제</button>
             </c:when>
             <c:when test="${from eq 'update'}">
-              <div class="items3"><button class="button_base b01_simple_rollover" onclick="this.form.action = 'restaurant-update'; this.form.submit();">수정완료</button></div>
+              <button class="button_base b01_simple_rollover" onclick="this.form.action = 'restaurant-update'; this.form.submit();">수정완료</button>
             </c:when>
           </c:choose>
           <button class="button_base b01_simple_rollover" onclick="window.location.href='/restaurant-list'">목록보기</button>

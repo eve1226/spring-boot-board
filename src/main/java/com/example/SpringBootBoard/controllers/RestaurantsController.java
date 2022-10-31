@@ -28,7 +28,9 @@ public class RestaurantsController {
     @RequestMapping(value="/restaurant-create", method= RequestMethod.GET)
     @ResponseBody
     ModelAndView restaurantCreate(){
-        return new ModelAndView("restaurant-form");
+        ModelAndView modelAndView = new ModelAndView("restaurant-form");
+        modelAndView.addObject("from", "create");
+        return modelAndView;
     }
 
     @RequestMapping(value="/restaurant-create", method= RequestMethod.POST)
@@ -53,8 +55,12 @@ public class RestaurantsController {
 
     @RequestMapping(value="/restaurant-update", method= RequestMethod.GET)
     @ResponseBody
-    ModelAndView restaurantUpdate(){
-        return new ModelAndView("restaurant-form");
+    ModelAndView restaurantUpdate(Integer pk){
+        Restaurant restaurant = restaurantsRepository.detail(pk);
+        ModelAndView modelAndView = new ModelAndView("restaurant-form");
+        modelAndView.addObject("restaurant", restaurant);
+        modelAndView.addObject("from", "update");
+        return modelAndView;
     }
 
     @RequestMapping(value="/restaurant-delete", method= RequestMethod.POST)
@@ -63,6 +69,16 @@ public class RestaurantsController {
         restaurantsRepository.delete(restaurant.getPk());
         return "<script>" +
                 "alert('삭제되었습니다');"+
+                "document.location.href='/restaurant-list';" +
+                "</script>";
+    }
+
+    @RequestMapping(value="/restaurant-update", method= RequestMethod.POST)
+    @ResponseBody
+    String restaurantUpdatePost(Restaurant restaurant){
+        restaurantsRepository.update(restaurant);
+        return "<script>" +
+                "alert('수정되었습니다');"+
                 "document.location.href='/restaurant-list';" +
                 "</script>";
     }

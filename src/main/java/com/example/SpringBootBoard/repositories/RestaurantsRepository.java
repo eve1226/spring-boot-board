@@ -16,4 +16,6 @@ public interface RestaurantsRepository {
     Integer create(Restaurant restaurant);
 
     Integer delete(Integer pk);
+
+    Integer update(Restaurant restaurant);
 }
