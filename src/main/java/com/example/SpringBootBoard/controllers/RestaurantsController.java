@@ -14,4 +14,22 @@ public class RestaurantsController {
         return new ModelAndView("restaurant-list");
     }
 
+    @RequestMapping(value="/restaurant-create", method= RequestMethod.GET)
+    @ResponseBody
+    ModelAndView restaurantCreate(){
+        return new ModelAndView("restaurant-form");
+    }
+
+    @RequestMapping(value="/restaurant-detail", method= RequestMethod.GET)
+    @ResponseBody
+    ModelAndView restaurantDetail(){
+        return new ModelAndView("restaurant-form");
+    }
+
+    @RequestMapping(value="/restaurant-update", method= RequestMethod.GET)
+    @ResponseBody
+    ModelAndView restaurantUpdate(){
+        return new ModelAndView("restaurant-form");
+    }
+
 }

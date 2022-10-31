@@ -1,0 +1,97 @@
+body{
+	margin:0 auto;
+	color:#000;
+}
+
+a{
+	color:white;
+}
+a:hover{
+	color:white;
+}
+
+table, th, td, tr {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 1024px;
+	border:1px solid rgba(223, 152, 8, 0.872);
+}
+
+table th {
+	background-color:#eec71c;
+	color:#ffffff;
+	text-align:center;
+}
+table td {
+	text-align:left;
+}
+
+th, td {padding:10px 10px 10px 10px};
+
+.wrap{
+	width: 100%;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1024px;
+}
+
+.items1{
+	color:#ef9c0c;
+	text-align: center;
+}
+.items2{
+	display: flex;
+	justify-content: center;
+}
+.items3{
+	display: flex;
+	justify-content: right;
+	padding-top: 20px;
+}
+
+.items2-create1 table th {
+	width: 300px;
+}
+
+input {
+  width: 500px;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+
+.button_base {
+	margin: 0;
+	border: 0;
+	font-size: 18px;
+	width: 120px;
+	height: 50px;
+	text-align: center;
+	box-sizing: border-box;
+	cursor: default;
+}
+
+.button_base:hover {
+	cursor: pointer;
+}
+
+/* ### ### ### 01 */
+.b01_simple_rollover {
+	color:rgba(223, 152, 8, 0.872);
+	border: rgba(223, 152, 8, 0.872) solid 1px;
+	padding: 10px;
+	background-color: #ffffff;
+}
+
+.b01_simple_rollover:hover {
+	color: #ffffff;
+	background-color: #eec71c;
+}
+
+
