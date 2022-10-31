@@ -5,6 +5,11 @@
     <select id="read" resultType="Restaurant">
         select * from restaurants
     </select>
+
+    <select id="detail" parameterType="Integer" resultType="Restaurant">
+        select * from restaurants where pk = #{pk}
+    </select>
+
     <insert id="create" parameterType="Restaurant">
         insert into restaurants(name, address, tel, menu) values(#{name}, #{address}, #{tel}, #{menu})
     </insert>

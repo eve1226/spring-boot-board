@@ -10,6 +10,8 @@ import java.util.List;
 public interface RestaurantsRepository {
     List<Restaurant> read();
 
+    Restaurant detail(Integer pk);
+
     // @Insert("insert into restaurants(name, address, tel, menu) values(#{name}, #{address}, #{tel}, #{menu})")
     Integer create(Restaurant restaurant);
 }

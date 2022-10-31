@@ -43,8 +43,12 @@ public class RestaurantsController {
 
     @RequestMapping(value="/restaurant-detail", method= RequestMethod.GET)
     @ResponseBody
-    ModelAndView restaurantDetail(){
-        return new ModelAndView("restaurant-form");
+    ModelAndView restaurantDetail(Integer pk){
+        Restaurant restaurant = restaurantsRepository.detail(pk);
+        ModelAndView modelAndView = new ModelAndView("restaurant-form");
+        modelAndView.addObject("restaurant", restaurant);
+        modelAndView.addObject("from", "detail");
+        return modelAndView;
     }
 
     @RequestMapping(value="/restaurant-update", method= RequestMethod.GET)
