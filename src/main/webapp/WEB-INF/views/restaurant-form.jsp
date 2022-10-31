@@ -13,34 +13,36 @@
   <div class="wrap">
     <div class="container">
       <div class="items1"><h1>맛집 등록</h1></div>
-      <div class="items2-create1">
-        <table>
-          <tbody>
-            <tr>
-              <th>등록번호</th>
-              <td><input type="text"></td>
-            </tr>
-            <tr>
-              <th>가게명</th>
-              <td><input type="text"></td>
-            </tr>
-            <tr>
-              <th>주소</th>
-              <td><input type="text"></td>
-            </tr>
-            <tr>
-              <th>전화번호</th>
-              <td><input type="text"></td>
-            </tr>
-            <tr>
-              <th>대표메뉴</th>
-              <td><input type="text"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="items3"><div class="button_base b01_simple_rollover">등록완료</div></div>
-    </div>
+        <form method="post" action="restaurant-create" onsubmit="event.preventDefualt();">
+          <div class="items2-create1">
+            <table>
+              <tbody>
+                <tr>
+                  <th>등록번호</th>
+                  <td><input type="text" name="pk"></td>
+                </tr>
+                <tr>
+                  <th>가게명</th>
+                  <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                  <th>주소</th>
+                  <td><input type="text" name="address"></td>
+                </tr>
+                <tr>
+                  <th>전화번호</th>
+                  <td><input type="text" name="tel"></td>
+                </tr>
+                <tr>
+                  <th>대표메뉴</th>
+                  <td><input type="text" name="menu"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="items3"><button class="button_base b01_simple_rollover" onclick="this.form.submit();">등록완료</button></div>
+        </div>
+      </form>
   </div>
 </body>
 </html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.SpringBootBoard.repositories.RestaurantsRepository">
+<!--    <select id="read" resultType="Member">-->
+<!--        select * from members-->
+<!--    </select>-->
+    <insert id="create" parameterType="Restaurant">
+        insert into restaurants(name, address, tel, menu) values(#{name}, #{address}, #{tel}, #{menu})
+    </insert>
+</mapper>
